@@ -4,26 +4,28 @@ var clamp          = require('clamp');
 var randomNatural  = require('random-natural');
 var randomSentence = require('random-sentence');
 
+var MIN_LEN = 2;
+var MAX_LEN = 20;
 
 module.exports = function (min, max) {
 
   var length = arguments.length;
 
   if (length === 0) {
-    min = 1;
-    max = 20;
+    min = MIN_LEN;
+    max = MAX_LEN;
   } else if (length === 1) {
     max = min;
-    min = 1;
+    min = MIN_LEN;
   }
 
   length = randomNatural(min, max);
-  length = clamp(length, 1, 20);
+  length = clamp(length, MIN_LEN, MAX_LEN);
 
   var sentences = [];
 
   while (length--) {
-    sentences.push(randomSentence(5, 20));
+    sentences.push(randomSentence());
   }
 
   return sentences.join(' ');

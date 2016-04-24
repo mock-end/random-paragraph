@@ -1,11 +1,8 @@
 {
   "name": "random-paragraph",
-  "version": "1.0.0",
-  "description": "Generate a random paragraph.",
+  "version": "1.0.1",
+  "description": "Return a random paragraph generated from sentences populated by semi-pronounceable random (nonsense) words.",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "lint": "jshint index.js",
     "pretest": "npm run lint",
@@ -16,18 +13,18 @@
   },
   "keywords": [
     "paragraph",
-    "sentence",
     "title",
+    "sentence",
     "world",
     "article",
-    "lorem",
-    "randomly",
+    "nonsense",
     "random",
-    "rand",
-    "sampling",
-    "generator",
-    "generate",
-    "gen"
+    "randomly",
+    "randomize",
+    "chance",
+    "test",
+    "dice",
+    "mock"
   ],
   "license": "MIT",
   "author": {
@@ -54,6 +51,6 @@
   "dependencies": {
     "clamp": "^1.0.1",
     "random-natural": "^1.0.0",
-    "random-sentence": "1.0.1"
+    "random-sentence": "1.0.2"
   }
 }
