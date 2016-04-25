@@ -5,21 +5,33 @@ var randomNatural  = require('random-natural');
 var randomSentence = require('random-sentence');
 
 var MIN_LEN = 2;
-var MAX_LEN = 20;
+var MAX_LEN = 18;
 
-module.exports = function (min, max) {
+module.exports = function (options) {
 
-  var length = arguments.length;
+  options = options || {
+      sentences: randomNatural({
+        min: 3,
+        max: 7,
+        inspected: true
+      })
+    };
 
-  if (length === 0) {
-    min = MIN_LEN;
-    max = MAX_LEN;
-  } else if (length === 1) {
-    max = min;
-    min = MIN_LEN;
+  var length = options.sentences;
+
+  if (!length && (options.min || options.max)) {
+    length = randomNatural({
+      min: options.min || MIN_LEN,
+      max: options.max || MAX_LEN
+    });
   }
 
-  length = randomNatural(min, max);
+  length = length || randomNatural({
+      min: MIN_LEN,
+      max: MAX_LEN,
+      inspected: true
+    });
+
   length = clamp(length, MIN_LEN, MAX_LEN);
 
   var sentences = [];

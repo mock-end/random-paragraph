@@ -21,15 +21,40 @@ $ npm install --save random-paragraph
 var randomParagraph = require('random-paragraph');
 
 // API
-// - randomParagraph();
-// - randomParagraph(max);
-// - randomParagraph(min, max);
+// - randomParagraph([options]);
 
-randomParagraph();
+// options
+// - sentences
+// - min
+// - max
+
 randomParagraph(8);
 randomParagraph(4, 9);
 randomParagraph(5, 5);
 ```
+
+Default is a paragraph with a random number of sentences from 3 to 7.
+
+```js
+randomParagraph();
+// => 'Lel fi huepe jupu akse zej ire vesik kojvulom zon is biwuwkef pa. Uv hokivej voh ebu numdogi akolo hik uwlez ta vacev ofdaimi acunetum suvet uhdab ir soglazo ju pafbeb. Pub cezeh fuc kebamnul he ok luumoabi rawkig me fov pin zup biv risugra. Ralpunad apkomgib alnirciw akel wa lus wahfum burog buol vecotihe abadahoj ugolo wovki ucojal fec.'
+```
+
+Optionally specify the number of sentences in the paragraph:
+
+```js
+randomParagraph({ sentences: 2 });
+// => 'Idefeulo foc omoemowa wahteze liv juvde puguprof. Epehuji upuga zige odfe igo sit pilamhul oto ukurecef.'
+```
+
+Can optionally provide `min` and `max`, then with a random sentences count:
+
+```js
+randomParagraph({min: 4, max: 9});
+// => 'Fusce dapibus tellus ac cursus commodo. Witpevze mappos isoletu fo res bi geow pofin mu rupoho revzi utva ne. Waddik jeasmov cakgilta ficub up. Idefeulo foc omoemowa wahteze liv juvde puguprof. Epehuji upuga zige odfe igo sit pilamhul oto ukurecef.'
+```
+
+**Note**: these min and max are **inclusive**, so they are included in the range. 
 
 ## Related
 
