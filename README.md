@@ -27,10 +27,6 @@ var randomParagraph = require('random-paragraph');
 // - sentences
 // - min
 // - max
-
-randomParagraph(8);
-randomParagraph(4, 9);
-randomParagraph(5, 5);
 ```
 
 Default is a paragraph with a random number of sentences from 3 to 7.

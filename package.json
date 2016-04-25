@@ -1,6 +1,6 @@
 {
   "name": "random-paragraph",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Return a random paragraph generated from sentences populated by semi-pronounceable random (nonsense) words.",
   "main": "index.js",
   "scripts": {
